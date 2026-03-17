@@ -80,7 +80,8 @@ function SubNavBar({ t }) {
 
 export default function App() {
   useClickEffect();
-  const [lang, setLang] = useState('pt');
+  const browserLang = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+  const [lang, setLang] = useState(browserLang.startsWith('pt') ? 'pt' : 'en');
   const t = translations[lang] || translations['pt'];
 
   const toggleLang = () => {

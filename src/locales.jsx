@@ -13,8 +13,8 @@ const AnimatedLink = ({ to, text }) => {
           {text.split('').map((char, index) => (
             <span
               key={index}
-              className="inline-block animate-fall opacity-0 hover:-translate-y-1 transition-transform duration-200"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="inline-block animate-fall hover:-translate-y-1 transition-transform duration-200"
+              style={{ animationDelay: `${index * 0.05}s`, opacity: 0 }}
             >
               <span className="inline-block" style={{ width: char === ' ' ? '0.3em' : 'auto' }}>
                 {char}
