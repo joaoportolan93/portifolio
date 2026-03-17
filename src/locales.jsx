@@ -10,18 +10,9 @@ const AnimatedLink = ({ to, text }) => {
         className="group relative inline-flex font-bold transition-transform duration-300 hover:scale-105"
       >
         <span className="relative inline-flex text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-fuchsia-500 to-amber-400 animate-rainbow" style={{ backgroundSize: '200% auto' }}>
-          {text.split('').map((char, index) => (
-            <span
-              key={index}
-              className="inline-block animate-fall hover:-translate-y-1 transition-transform duration-200"
-              style={{ animationDelay: `${index * 0.05}s`, opacity: 0 }}
-            >
-              <span className="inline-block" style={{ width: char === ' ' ? '0.3em' : 'auto' }}>
-                {char}
-              </span>
-            </span>
-          ))}
+          {text}
         </span>
+        <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-gradient-to-r from-blue-400 via-fuchsia-500 to-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 rounded-full"></span>
       </Link>
     </span>
   );
